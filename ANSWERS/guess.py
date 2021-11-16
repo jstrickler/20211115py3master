@@ -18,6 +18,7 @@ while True:
         min_value = guess
     elif answer == "y":
         print("I got it in {} tries!".format(tries))
+        print(f"I got it in {tries} tries!")
         break
     else:
         print("Please enter h, l, or y")
