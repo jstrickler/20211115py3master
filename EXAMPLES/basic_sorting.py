@@ -10,3 +10,8 @@ fruit = ["pomegranate", "cherry", "apricot", "date", "Apple", "lemon", "Kiwi",
 sorted_fruit = sorted(fruit)  # <1>
 
 print(sorted_fruit)
+
+# invalid
+# values = ['abc', 5, 19, 'spam', 'ham', 'atomic bomb']
+# print(sorted(values))
+
