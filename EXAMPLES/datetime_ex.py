@@ -12,8 +12,8 @@ print("now.hour:", now.hour)
 print("now.minute:", now.minute)
 print("now.second:", now.second)
 
-d1 = datetime(2018, 6, 13)  # <4>
-d2 = datetime(2018, 8, 24)
+d1 = datetime(2018, 6, 13, 10, 23, 47)  # <4>
+d2 = datetime(2018, 8, 24, 21, 5, 2)
 
 d3 = d2 - d1  # <5>
 

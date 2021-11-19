@@ -17,10 +17,44 @@ rx_code = re.compile(r'(?P<letter>[A-Z])(?P<number>\d{2,3})', re.I)
 
 
 def update_code(m):  # <1>
-    letter = m.group('letter').upper()
+#    letter = m.group('letter').upper()
+    letter = m.group(1).upper()
     number = int(m.group('number'))
     return '{}{:04d}'.format(letter, number)  # <2>
 
 
 s2 = rx_code.sub(update_code, s)  # <3>
-print(s2)
+print(s2, '\n')
+
+pattern = "(?P<hour>\d{2}):(?P<minute>\d{2})\s*(?P<ampm>[AP])M"
+
+text = [
+    "It is 12:32  AM in Austin",
+    "Please turn out the lights at 10:00 PM",
+    "We call 04:00AM oh dark thirty",
+]
+
+for t in text:
+    print("Text:", t)
+    m = re.search(pattern, t)
+    if m:
+        print("group 0:", m.group(0))
+        print("group 1:", m.group('hour'))
+        print("group 2:", m.group('minute'))
+        print("group 3:", m.group('ampm'))
+        print("=" * 20)
+
+
+p = r"\d{3}-\d{2}-(\d{4})"
+
+
+#   p1  p2 p3  p4
+
+pattern = r"(?:p1)|(?:p2)|(?:p3)|(?:p4)"
+
+
+
+
+
+
+

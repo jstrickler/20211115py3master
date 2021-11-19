@@ -6,6 +6,8 @@ date_strings = [  # <1>
     'April 1, 2015',
     '4/1/2015',
     'Apr 1, 2015',
+    'Feb 30, 2002',
+    '9/32/1964',
     'Apr 1 2015',
     '04/01/2015',
     '1 Apr 2015',
@@ -19,6 +21,6 @@ date_strings = [  # <1>
 for date_string in date_strings:
     try:
         dt = parser.parse(date_string)  # <2>
-        print(dt)
+        print("{:30s} {}".format(date_string, dt))
     except ValueError as err:
         print("Can't parse", date_string)

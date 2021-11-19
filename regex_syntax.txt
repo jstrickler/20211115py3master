@@ -1,0 +1,71 @@
+
+Atoms
+
+  pat     "pat"    "The pattern is obvious"    "I spat in the gutter"  "I gave his arm a pat"
+
+  p.t     "The pot is boiling"  "My pet is a dog" "red carpet"  "petunias are nice"  "keep to the right"
+
+  p[aeiou]t
+
+  p[^aeiou]t
+
+  [0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]
+
+  \d  [0-9]
+  \s  [ \t\r\n\f]
+  \w  [a-zA-Z0-9_]   "word" characters
+
+  \d\d\d-\d\d-\d\d\d\d
+
+Quantifiers (repeat counts)
+
+  pa*t    pt  pat paaaaaaaaaaaaaaaaaat
+
+  pa+t    pat paaaaat  etc etc
+
+  pa{3}t   paaat
+
+  pa{1,2}t  pat paat
+
+  pa{2,}t   paat paaaaaaaat
+
+  \d{3}-\d{2}-\d{4}
+
+  pa?t   pt pat
+  pa{0,1}t
+
+Anchors (locators)
+
+  ^spam     "spam ...."    NOT " this spam is"  "junk junk spam"
+
+  ham$    "....ham"
+
+  \bthe\b   "what is the cost of them"
+  \bthe
+   the\b    "I have a new lathe in the workshop from their store"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
