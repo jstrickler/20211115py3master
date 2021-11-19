@@ -3,7 +3,7 @@
 import logging
 
 logging.basicConfig( # <1>
-    filename='../TEMP/exception.log',
+    filename='../TEMP/simple.log',
     level=logging.WARNING,  # <2>
 )
 

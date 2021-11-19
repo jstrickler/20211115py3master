@@ -7,11 +7,11 @@ from datetime import datetime
 TIMESTAMP = datetime.now().ctime()  # <4>
 
 SENDER = 'jstrick@mindspring.com'
-RECIPIENTS = ['jstrickler@gmail.com']
+RECIPIENTS = ['jstrickler@gmail.com', 'crgnc3@gmail.com']
 MESSAGE_SUBJECT = 'Python SMTP example'
 
 MESSAGE_BODY = """
-Hello at {}.
+<h1>Hello at {}.</h1>
 
 Testing email from Python
 """.format(TIMESTAMP)
@@ -23,6 +23,10 @@ smtpserver = smtplib.SMTP("smtp2go.com", 2525)  # <6>
 smtpserver.login(SMTP_USER, SMTP_PASSWORD)  # <7>
 
 msg = EmailMessage()  # <8>
+
+with open('DATA/parrot.txt') as parrot_in:
+    MESSAGE_BODY = parrot_in.read()
+
 msg.set_content(MESSAGE_BODY)  # <9>
 msg['Subject'] = MESSAGE_SUBJECT  # <10>
 msg['from'] = SENDER  # <11>

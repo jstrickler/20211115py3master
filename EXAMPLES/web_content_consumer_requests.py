@@ -17,11 +17,12 @@ def main(args):
     response = requests.get(
         BASE_URL + args[0],
         params={'key': API_KEY},
+        auth=('joeblow', 'pa$$w0rd'),  # HTTP basic-auth
     )  # <3>
 
-    if response.status_code == requests.codes.OK:
-        # pprint(response.content.decode())
-        # print('-' * 60)
+    if response.status_code == requests.codes.OK:  # 200
+        pprint(response.text)
+        print('-' * 60)
         data = response.json()  # <4>
         for entry in data: # <5>
             if isinstance(entry, dict):
@@ -42,3 +43,13 @@ def main(args):
 
 if __name__ == '__main__':
     main(sys.argv[1:])
+
+#    GET POST PUT PATCH DELETE HEAD
+
+#  get -- retrieve data  (REST: with ID, retrieve record, without ID, retrieve all records)
+#  post -- upload data  SEND FORM DATA (REST: create new record)
+#  put -- upload data (REST: replace record)
+#  patch -- upload data (REST: partially replace record)
+#  delete -- (REST: delete record)
+
+

@@ -13,6 +13,10 @@ try:
     print(values[index])
 except IndexError as err:
     print(err)
+#    logging.warning(err)
+    # with open(....)
+    #    file.write(err)
+    #    file.write(blah blah)
 
 
 for v in values:

@@ -22,6 +22,6 @@ print("{}.zip exists:".format(new_folder), os.path.exists(new_folder + '.zip'))
 
 print("{} exists:".format(new_folder), os.path.exists(new_folder))
 
-shutil.rmtree(new_folder) # <5>
+shutil.rmtree(new_folder, ignore_errors=True) # <5>
 
 print("{} exists:".format(new_folder), os.path.exists(new_folder))

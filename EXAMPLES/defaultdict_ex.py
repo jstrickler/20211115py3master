@@ -7,7 +7,10 @@ Created on Wed Mar 13 20:45:42 2013
 """
 from collections import defaultdict
 
-dd = defaultdict(lambda: 0)  # <1>
+def get_zero():
+    return 0
+
+dd = defaultdict(get_zero)  # <1>
 
 dd['spam'] = 10  # <2>
 dd['eggs'] = 22
@@ -15,6 +18,10 @@ dd['eggs'] = 22
 print(dd['spam'])  # <3>
 print(dd['eggs'])
 print(dd['foo'])  # <4>
+print(dd['Willy Wonka'])
+print(dd[5.9])
+dd['honey badger'] += 1
+print(dd)
 
 print('-' * 60)
 

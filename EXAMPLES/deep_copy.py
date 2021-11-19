@@ -6,12 +6,13 @@ data = [
     [4, 5, 6],
 ]
 
-d1 = data # <1>
-d2 = list(data) # <2>
-d3 = copy.deepcopy(data) # <3>
+d1 = data # alias for data
+d2 = list(data) # shallow copy of data
+d3 = copy.deepcopy(data) # deep copy of data
+print(id(data), id(d1), id(d2), id(d3))
 
-d1.append("d1")  # <4>
-d1[0].append(50) # <5>
+d1.append("d1")  # same as appending to data
+d1[0].append(50) # append to first element of d1
 
 d2.append("d2")   # <6>
 d2[0].append(99)  # <7>
@@ -28,4 +29,21 @@ print()
 print("id(d1[0]):", id(d1[0]))
 print("id(d2[0]):", id(d2[0]))
 print("id(d3[0]):", id(d3[0]))
+
+names = ['Fred', 'Mary', 'Bob']
+
+def doit(wallaby):
+    wallaby.append("Fritz")
+    print("in doit(): wallaby is", wallaby)
+
+doit(names)
+
+doit(['Molly', 'Nellie', 'Seth'])
+
+
+print(names)
+
+
+
+
 
